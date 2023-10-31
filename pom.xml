@@ -37,5 +37,23 @@
 			</plugin>
 		</plugins>
 	</build>
+	<packaging>jar</packaging>
 
+	<distributionManagement>
+		  <repository>
+			  <id>github</id>
+			  <name>GitHub Apache Maven Packages</name>
+			  <url>https://maven.pkg.github.com/AlexKovalenkoBY/dockerTest</url>
+		  </repository>
+	</distributionManagement>
+	
+	<dependencyManagement>
+	  <dependencies>
+		  <dependency>
+			  <groupId>${project.groupId}</groupId>
+			  <artifactId>common</artifactId>
+			  <version>${project.version}</version>
+		  </dependency>
+	  </dependencies>
+	</dependencyManagement>
 </project>
