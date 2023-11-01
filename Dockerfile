@@ -2,7 +2,7 @@ FROM openjdk:18
 
 WORKDIR /app
 
-COPY target/java-0.0.1-snapshot.jar /app
+# COPY target/java-0.0.1-snapshot.jar /app
 
 EXPOSE 8081
 
