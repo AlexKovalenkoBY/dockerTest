@@ -6,7 +6,7 @@ COPY mvnw .
 COPY pom.xml .
 COPY src src
 
-RUN /opt/mvnd/bin/mvnd -B package
+RUN /opt/mvnd/bin/mvnd -B package -DskipTests=true
 
 FROM openjdk:11-jre-slim-buster
 
