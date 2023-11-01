@@ -13,7 +13,7 @@ COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
 RUN ./mvnw dependency:go-offline
 COPY ./src ./src
-RUN ./mvnw clean install package -DskipTests=true 
+RUN ./mvn clean install package -DskipTests=true 
 
 FROM openjdk:17.0.2-jdk-slim-buster
 ARG JAR_FILE=target/java-0.0.1-snapshot.jar
