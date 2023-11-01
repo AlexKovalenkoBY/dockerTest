@@ -18,7 +18,7 @@ COPY ./src ./src
 RUN ./mvnw clean install package -DskipTests=true 
 
 FROM openjdk:17.0.2-jdk-slim-buster
-ARG JAR_FILE=target/java-0.0.1-snapshot.jar
+ARG JAR_FILE=target/*.jar
 WORKDIR /opt/apt
 # COPY ${JAR_FILE} app.jar
 COPY --from=builder /opt/app/target/*.jar /opt/app/*.jar
