@@ -10,6 +10,7 @@
 # CMD ["java", "-jar", "java-0.0.1-snapshot.jar"]
 
 FROM openjdk:17.0.2-jdk-slim-buster as builder
+RUN echo "dsf;gldksg;flk"
 WORKDIR /opt/app
 COPY .mvn/ .mvn
 COPY mvn pom.xml ./
