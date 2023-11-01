@@ -10,7 +10,7 @@
 FROM openjdk:17.0.2-jdk-slim-buster as builder
 WORKDIR /opt/app
 COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
+COPY mvn pom.xml ./
 RUN ./mvnw dependency:go-offline
 COPY ./src ./src
 RUN ./mvn clean install package -DskipTests=true 
