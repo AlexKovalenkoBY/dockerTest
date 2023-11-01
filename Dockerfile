@@ -14,9 +14,9 @@ RUN echo "dsf;gldksg;flk"
 WORKDIR /opt/app
 COPY .mvn/ .mvn
 COPY mvn pom.xml ./
-RUN ./mvnw dependency:go-offline
+RUN ./mvn dependency:go-offline
 COPY ./src ./src
-RUN ./mvnw clean install package -DskipTests=true 
+RUN ./mvn clean install package -DskipTests=true 
 
 FROM openjdk:17.0.2-jdk-slim-buster
 ARG JAR_FILE=target/*.jar
