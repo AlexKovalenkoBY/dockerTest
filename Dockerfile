@@ -2,6 +2,7 @@ FROM eclipse-temurin:17-jdk-alpine as builder
 WORKDIR /opt/app
 COPY ./ ./
 
+RUN chmod +x ./mvnw
 RUN ./mvnw dependency:go-offline
 RUN ./mvnw clean install
 
