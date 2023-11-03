@@ -21,16 +21,13 @@
 FROM eclipse-temurin:17-jdk-alpine as builder
 WORKDIR /opt/app
 COPY ./ ./
-RUN ls -la /files/*
 
 RUN chmod +x ./mvnw
 RUN ./mvnw dependency:go-offline
 RUN ./mvnw clean install package -DskipTests=true
-RUN ls -la /files/*
 
 FROM eclipse-temurin:17-jre-alpine
 WORKDIR /opt/app
 COPY --from=builder /opt/app/target/*.jar /opt/app/*.jar
-RUN ls -la /files/*
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "java-0.0.1-SNAPSHOT.jar"]
